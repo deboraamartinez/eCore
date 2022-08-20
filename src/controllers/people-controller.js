@@ -1,5 +1,5 @@
 const peopleArray = []
-const { v4: uuidv4 } = require('uuid')
+
 
 const PeopleController = {
 
@@ -31,6 +31,36 @@ const PeopleController = {
       }
     }
   },
+
+  getByAge: async (req, res) => {
+    try {
+      const getAge = peopleArray.sort(function (a, b) {
+        return a.age - b.age
+      })
+      return res
+        .json(getAge)
+        .status(200)
+    } catch (err) {
+      if (err instanceof Error) {
+        return res.status(400).json({ message: err.message })
+      }
+    }
+  },
+  getByName: async (req, res) => {
+    try {
+      const getName = peopleArray.sort(function (a, b) {
+        return a.name - b.name
+      })
+      return res
+        .json(getName)
+        .status(200)
+    } catch (err) {
+      if (err instanceof Error) {
+        return res.status(400).json({ message: err.message })
+      }
+    }
+  },
+
 }
 
 
