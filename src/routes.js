@@ -7,8 +7,12 @@ const router = Router()
 
 router.post('/people', PeopleController.createPerson)
 router.get('/people', PeopleController.index)
+router.get('/people/age/order', PeopleController.getOrderdByAge)
 router.get('/people/age', PeopleController.getByAge)
 router.get('/people/name', PeopleController.getByName)
+
+
+
 
 
 

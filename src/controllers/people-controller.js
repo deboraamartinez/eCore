@@ -49,7 +49,9 @@ const PeopleController = {
   getByName: async (req, res) => {
     try {
       const getName = peopleArray.sort(function (a, b) {
-        return a.name - b.name
+        var x = a.name.toLowerCase();
+        var y = b.name.toLowerCase();
+        return x < y ? -1 : x > y ? 1 : 0;
       })
       return res
         .json(getName)
@@ -60,6 +62,24 @@ const PeopleController = {
       }
     }
   },
+
+  getOrderdByAge: async (req, res) => {
+    try {
+
+      const getKids = peopleArray.filter(el => el.age < 11)
+      const getTeenagers = peopleArray.filter(el => el.age >= 12 && el.age <= 19)
+      const getAdults = peopleArray.filter(el => el.age >= 20 && el.age <= 65)
+      const getSeniors = peopleArray.filter(el => el.age > 65)
+      return res
+        .json({ Kids: getKids, Teenagers: getTeenagers, Adults: getAdults, Senior: getSeniors })
+        .status(200)
+
+    } catch (err) {
+      if (err instanceof Error) {
+        return res.status(400).json({ message: err.message })
+      }
+    }
+  }
 
 }
 
