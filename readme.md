@@ -25,14 +25,17 @@ yarn install
 ```bash
 yarn add express
 ```
+- Run the server
 - The server will run on port 3000
 - To test the features you can make requests through Insomnia or Postman
 - To Create a person you need to POST:
 ```bash
 http://localhost:3000/people
+```
+```bash
 "Name": "", "Age":""
 ```
--To Read all people you need to GET:
+- To Read all people you need to GET:
 ```bash
 http://localhost:3000/people
 ```
