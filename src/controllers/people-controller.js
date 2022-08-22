@@ -23,6 +23,16 @@ const PeopleController = {
           .status(400)
           .json({ error: 'You need to put age and name' })
       }
+      if (isNaN(newPerson.age)) {
+        return res
+          .status(400)
+          .json({ error: 'The age must be a number' })
+      }
+      if (!isNaN(newPerson.name) && typeof newPerson.name === 'string') {
+        return res
+          .status(400)
+          .json({ error: 'The name must be a string' })
+      }
       const addPerson = peopleArray.push(newPerson)
       return res.status(201).json(addPerson)
     } catch (err) {
@@ -71,7 +81,7 @@ const PeopleController = {
       const getAdults = peopleArray.filter(el => el.age >= 20 && el.age <= 65)
       const getSeniors = peopleArray.filter(el => el.age > 65)
       return res
-        .json({ Kids: getKids, Teenagers: getTeenagers, Adults: getAdults, Senior: getSeniors })
+        .json({ Kids: getKids, Teenagers: getTeenagers, Adults: getAdults, Seniors: getSeniors })
         .status(200)
 
     } catch (err) {

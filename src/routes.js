@@ -11,9 +11,4 @@ router.get('/people/age/order', PeopleController.getOrderdByAge)
 router.get('/people/age', PeopleController.getByAge)
 router.get('/people/name', PeopleController.getByName)
 
-
-
-
-
-
 module.exports = router
