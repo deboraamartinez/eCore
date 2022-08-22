@@ -15,28 +15,38 @@ Technical case repository for internship at e-Core
 
 - Clone the repo
 ```bash
-<git clone https://github.com/deboraamartinez/eCore.git>
+git clone https://github.com/deboraamartinez/eCore.git
 ```
 - Install Yarn
 ```bash
-<yarn install>
+yarn install
 ```
 - Add the packages
 ```bash
-<yarn add express>
+yarn add express
 ```
 - The server will run on port 3000
 - To test the features you can make requests through Insomnia or Postman
 - To Create a person you need to POST:
-<http://localhost:3000/people>
-<"Name": "", "Age":"">
+```bash
+http://localhost:3000/people
+"Name": "", "Age":""
+```
 -To Read all people you need to GET:
-<http://localhost:3000/people>
+```bash
+http://localhost:3000/people
+```
 - To Read sorted by age you need to GET:
-<http://localhost:3000/people/age>
+```bash
+http://localhost:3000/people/age
+```
 - To Read sorted by name you need to GET:
-<http://localhost:3000/people/name>
+```bash
+http://localhost:3000/people/name
+```
 - To Read sorted by age and categorized into children, teens, adults and seniors you need to GET:
-<http://localhost:3000/people/age/order>
+```bash
+http://localhost:3000/people/age/order
+```
 
 
