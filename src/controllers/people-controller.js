@@ -34,7 +34,9 @@ const PeopleController = {
           .json({ error: 'The name must be a string' })
       }
       const addPerson = peopleArray.push(newPerson)
-      return res.status(201).json(addPerson)
+      return res
+        .status(201)
+        .json({ message: 'Person successfully created' })
     } catch (err) {
       if (err instanceof Error) {
         return res.status(400).json({ message: err.message })
