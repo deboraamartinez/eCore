@@ -14,11 +14,17 @@ Technical case repository for internship at e-Core
 ### Instruções de uso:
 
 - Clone the repo
+```bash
 <git clone https://github.com/deboraamartinez/eCore.git>
+```
 - Install Yarn
+```bash
 <yarn install>
+```
 - Add the packages
+```bash
 <yarn add express>
+```
 - The server will run on port 3000
 - To test the features you can make requests through Insomnia or Postman
 - To Create a person you need to POST:
