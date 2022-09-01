@@ -80,8 +80,8 @@ const PeopleController = {
 
       const getKids = peopleArray.filter(el => el.age < 11)
       const getTeenagers = peopleArray.filter(el => el.age >= 12 && el.age <= 19)
-      const getAdults = peopleArray.filter(el => el.age >= 20 && el.age <= 65)
-      const getSeniors = peopleArray.filter(el => el.age > 65)
+      const getAdults = peopleArray.filter(el => el.age >= 20 && el.age < 65)
+      const getSeniors = peopleArray.filter(el => el.age >= 65)
       return res
         .json({ Kids: getKids, Teenagers: getTeenagers, Adults: getAdults, Seniors: getSeniors })
         .status(200)
